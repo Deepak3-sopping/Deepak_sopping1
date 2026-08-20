@@ -1,0 +1,456 @@
+body{
+  padding: 25px;
+}
+.title {
+	color: #5C6AC4;
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deepak Shop</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f5f7fb;
+      color: #222;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 15px;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    .hero {
+      min-height: 75vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px 7%;
+      background: linear-gradient(135deg, #dbeafe, #f0f9ff);
+    }
+
+    .hero h1 {
+      font-size: 50px;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 span {
+      color: #2563eb;
+    }
+
+    .hero p {
+      font-size: 19px;
+      color: #555;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #2563eb;
+      color: white;
+      padding: 13px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .btn:hover {
+      background: #1d4ed8;
+    }
+
+    section {
+      padding: 60px 7%;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 35px;
+    }
+
+    .about {
+      text-align: center;
+      max-width: 750px;
+      margin: auto;
+      line-height: 1.8;
+      color: #555;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+    }
+
+    .product {
+      background: white;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      padding-bottom: 20px;
+      text-align: center;
+    }
+
+    .product-img {
+      height: 180px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 65px;
+      background: #e0f2fe;
+    }
+
+    .product h3 {
+      margin: 18px 0 8px;
+    }
+
+    .price {
+      color: #2563eb;
+      font-size: 21px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .cart-box {
+      max-width: 700px;
+      margin: auto;
+      background: white;
+      padding: 25px;
+      border-radius: 14px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    }
+
+    #cartItems {
+      margin-bottom: 20px;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .total {
+      font-size: 22px;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+
+    form {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 25px;
+      border-radius: 14px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 13px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+    textarea {
+      height: 120px;
+      resize: none;
+    }
+
+    footer {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 25px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      nav a {
+        margin: 0 6px;
+        font-size: 13px;
+      }
+
+      .hero h1 {
+        font-size: 38px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">🛍️ Deepak Shop</div>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#products">Shop</a>
+    <a href="#cart">Cart 🛒</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+
+<!-- HOME -->
+<section class="hero" id="home">
+  <div>
+    <h1>Welcome to <span>Deepak Shop</span></h1>
+    <p>आपकी पसंद की चीज़ें, एक ही जगह पर।</p>
+    <a href="#products" class="btn">Shop Now 🛍️</a>
+  </div>
+</section>
+
+
+<!-- ABOUT -->
+<section id="about">
+  <h2 class="title">About Deepak Shop</h2>
+
+  <div class="about">
+    <p>
+      Deepak Shop एक modern online shopping website है।
+      यहाँ आप अपनी पसंद के products देख सकते हैं और उन्हें
+      cart में add कर सकते हैं।
+    </p>
+  </div>
+</section>
+
+
+<!-- PRODUCTS -->
+<section id="products">
+  <h2 class="title">Our Products</h2>
+
+  <div class="products">
+
+    <div class="product">
+      <div class="product-img">👕</div>
+      <h3>Stylish T-Shirt</h3>
+      <div class="price">₹499</div>
+      <button class="btn" onclick="addToCart('Stylish T-Shirt',499)">
+        Add to Cart
+      </button>
+    </div>
+
+    <div class="product">
+      <div class="product-img">👟</div>
+      <h3>Sports Shoes</h3>
+      <div class="price">₹999</div>
+      <button class="btn" onclick="addToCart('Sports Shoes',999)">
+        Add to Cart
+      </button>
+    </div>
+
+    <div class="product">
+      <div class="product-img">🎧</div>
+      <h3>Wireless Headphones</h3>
+      <div class="price">₹799</div>
+      <button class="btn" onclick="addToCart('Wireless Headphones',799)">
+        Add to Cart
+      </button>
+    </div>
+
+    <div class="product">
+      <div class="product-img">⌚</div>
+      <h3>Smart Watch</h3>
+      <div class="price">₹1,499</div>
+      <button class="btn" onclick="addToCart('Smart Watch',1499)">
+        Add to Cart
+      </button>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- CART -->
+<section id="cart">
+  <h2 class="title">🛒 Your Cart</h2>
+
+  <div class="cart-box">
+
+    <div id="cartItems">
+      आपका cart अभी खाली है।
+    </div>
+
+    <div class="total">
+      Total: ₹<span id="total">0</span>
+    </div>
+
+    <button class="btn" onclick="checkout()">
+      Checkout
+    </button>
+
+  </div>
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2 class="title">Contact Us</h2>
+
+  <form onsubmit="sendMessage(event)">
+
+    <input type="text" id="name"
+           placeholder="आपका नाम" required>
+
+    <input type="email" id="email"
+           placeholder="आपका Email" required>
+
+    <textarea id="message"
+              placeholder="आपका संदेश" required></textarea>
+
+    <button class="btn" type="submit">
+      Send Message
+    </button>
+
+  </form>
+</section>
+
+
+<footer>
+  <p>© 2026 Deepak Shop. All Rights Reserved.</p>
+</footer>
+
+
+<script>
+
+  let cart = [];
+
+  function addToCart(name, price) {
+
+    cart.push({
+      name: name,
+      price: price
+    });
+
+    updateCart();
+
+    alert(name + " cart में add हो गया!");
+  }
+
+
+  function updateCart() {
+
+    const cartItems = document.getElementById("cartItems");
+    const totalElement = document.getElementById("total");
+
+    if (cart.length === 0) {
+
+      cartItems.innerHTML = "आपका cart अभी खाली है।";
+      totalElement.innerText = "0";
+
+      return;
+    }
+
+    let total = 0;
+
+    cartItems.innerHTML = "";
+
+    cart.forEach((item, index) => {
+
+      total += item.price;
+
+      cartItems.innerHTML += `
+        <div class="cart-item">
+          <span>${item.name}</span>
+
+          <span>
+            ₹${item.price}
+
+            <button
+              onclick="removeItem(${index})"
+              style="margin-left:10px; cursor:pointer;">
+              ❌
+            </button>
+          </span>
+        </div>
+      `;
+    });
+
+    totalElement.innerText = total;
+  }
+
+
+  function removeItem(index) {
+
+    cart.splice(index, 1);
+
+    updateCart();
+  }
+
+
+  function checkout() {
+
+    if (cart.length === 0) {
+
+      alert("पहले कोई product cart में add करें।");
+      return;
+    }
+
+    alert(
+      "Order तैयार है! 🎉\n\n" +
+      "अभी यह demo checkout है।"
+    );
+  }
+
+
+  function sendMessage(event) {
+
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+
+    alert(
+      "धन्यवाद " + name +
+      "! आपका message भेज दिया गया है।"
+    );
+
+    event.target.reset();
+  }
+
+</script>
+
+</body>
+</html>
